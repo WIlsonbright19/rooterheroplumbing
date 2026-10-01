@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #1e1e1e;
+    --primary-foreground: #ffffff;
+    --secondary: #5a6271;
+    --tertiary: #d0d8e4;
+    --neutral: #ffffff;
+    --surface: #f5f7fb;
+    --on-surface: #1e1e1e;
+    --error: #d64545;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--neutral);
+    color: var(--primary);
+  }
+}
+
+/* Custom Typography & Component Utility Classes */
+.font-headline-display {
+  font-family: 'Inter', 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: clamp(38px, 5.5vw, 60px);
+  line-height: clamp(46px, 6.2vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.6px;
+}
+
+.font-headline-lg {
+  font-family: 'Inter', 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: clamp(28px, 4vw, 43px);
+  line-height: clamp(36px, 4.8vw, 66px);
+  font-weight: 500;
+  letter-spacing: -0.6px;
+}
+
+.font-headline-md {
+  font-family: 'Inter', 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: clamp(22px, 2.5vw, 31px);
+  line-height: clamp(28px, 3.2vw, 37px);
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.btn-brixora-primary {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 7px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 134px;
+  min-height: 40px;
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-brixora-primary:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.btn-brixora-primary:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+.btn-brixora-secondary {
+  background-color: transparent;
+  color: #5a6271;
+  border: 1px solid #5a6271;
+  border-radius: 4px;
+  padding: 7px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 134px;
+  min-height: 40px;
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-brixora-secondary:hover {
+  color: #1e1e1e;
+  border-color: #1e1e1e;
+  background-color: rgba(30, 30, 30, 0.03);
+}
+
+.btn-brixora-link {
+  background-color: transparent;
+  color: #5a6271;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.btn-brixora-link:hover {
+  color: #1e1e1e;
+}
+
+.brixora-card {
+  background-color: #ffffff;
+  border: 1px solid #d0d8e4;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: none;
+  color: #1e1e1e;
+  transition: border-color 0.25s ease;
+}
+
+.brixora-card:hover {
+  border-color: #a9b7cc;
+}
+
+/* Continuous Kinetic Scroll Track */
+@keyframes continuousScrollTrack {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-continuous-scroll {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: continuousScrollTrack 24s linear infinite;
+}
+
+.animate-continuous-scroll:hover {
+  animation-play-state: paused;
+}
+
